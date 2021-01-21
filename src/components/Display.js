@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { BASE_URL, API_KEY } from '../constants/const';
 
-const Display = (props) => {
+const Display = () => {
 
     const [pageData, setPageData] = useState({});
 
@@ -18,9 +18,23 @@ const Display = (props) => {
     }, []);
 
     return (
-        <section class="section">
-            <h1>Title {pageData.title}</h1>
+        <section class='main_content'>
+            
+            <section class="top_information">
+                    <h1>Title: {pageData.title}</h1>
+                    <p>{pageData.date}</p>
+            </section>
+            
+            <section class='img'> 
+            <a href={pageData.hdurl}><img src={pageData.url} alt='magnetic field in the galaxy' /></a>
+            </section>
+            
+            <section class='bottom_information'>
+                <p>{pageData.explanation}</p>
+            </section>
+
         </section>
+
     )
 }
 
