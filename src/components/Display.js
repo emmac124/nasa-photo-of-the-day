@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { BASE_URL, API_KEY } from '../constants/const';
+import { BASE_URL, API_KEY } from '../constants/keys';
 
 const Display = () => {
 
@@ -21,12 +21,12 @@ const Display = () => {
         <section class='main_content'>
             
             <section class="top_information">
-                    <h1>Title: {pageData.title}</h1>
+                    <h1>{pageData.title}</h1>
                     <p>{pageData.date}</p>
             </section>
             
             <section class='img'> 
-            <a href={pageData.hdurl}><img src={pageData.url} alt='magnetic field in the galaxy' /></a>
+            <a href={pageData.hdurl}><img src={pageData.url} alt='galaxy' /></a>
             </section>
             
             <section class='bottom_information'>
