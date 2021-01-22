@@ -3,6 +3,7 @@
 export default {
    primaryColor: '#242F36',
    secondaryColor: '#E8776F',
+   fontWeight: 'bolder',
    thirdColor: 'royalblue',
    black: 'black',
    white: 'white',

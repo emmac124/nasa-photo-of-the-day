@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { BASE_URL, API_KEY } from '../constants/keys';
-import styled from 'styled-components';
-import Button from './Button';
+import styled, { keyframes } from 'styled-components';
+// import Button from './Button';
 
 const Display = () => {
 
@@ -34,23 +34,22 @@ const Display = () => {
 
                 <FirstSectionStyle>
                     <div>
-                        <h3>{pageData.title}</h3>
+                        <h2>{pageData.title}</h2>
                         <p>{pageData.date}</p>
-                        <h4>Explanation</h4>
                         {/* {
                         // <Button details={open} />
                     <Button details={pageData.explanation} />
                     } */}
                         {/* <button onClick={open}>Click Me for an Explanation!</button> */}
+                    <SecondSectionStyle>
+                        <ImgStyle> 
+                        <a href={pageData.hdurl}><img src={pageData.url} alt='galaxy' /></a>
+                        </ImgStyle>
+                    </SecondSectionStyle>
+                        <h4>Explanation</h4>
                         <p>{pageData.explanation}</p>
                     </div>
                 </FirstSectionStyle>
-
-                <SecondSectionStyle>
-                    <ImgStyle> 
-                    <a href={pageData.hdurl}><img src={pageData.url} alt='galaxy' /></a>
-                    </ImgStyle>
-                </SecondSectionStyle>
 
             </MainStyle>
 
@@ -58,50 +57,81 @@ const Display = () => {
     )
 }
 
+const kf = keyframes`
+    100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
+const keyframe = keyframes`
+    100% {
+    transform: scale(1.25);
+  }
+`;
+
 const TopStyle = styled.section`
-    color: ${pr => pr.theme.secondaryColor};
+background-color: ${pr => pr.theme.primaryColor};
 `;
 
 const HeaderStyle = styled.h1`
-    max-width:100%;
+    max-width:50%;
     display:flex;
     justify-content:center;
+    align-items:center;
     color: ${pr => pr.theme.secondaryColor};
+    border-bottom: 2px solid ${pr => pr.theme.white};
+    margin: 0 auto;
+    h1 {
+        animation:${keyframe} 1.75s ease-in-out forwards;
+    }
 `;
 
 const MainStyle = styled.section`
     display:flex;
-    margin:3%;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    max-width:100%;
 `;
 
 const FirstSectionStyle = styled.section`
-
     display: flex;
     flex-direction:column;
-    max-width:30%;
+    max-width:50%;
     text-align: center;
-    padding: 0;
     align-items:center;
-    border-right-style: 3px solid white;
     
-   h3 {
+   h2 {
        color: ${pr => pr.theme.secondaryColor};
+       padding-top:1%;
    }
    p {
     color: ${pr => pr.theme.white};
+    max-width:100%; 
+    padding-bottom: 1.25%;
+    &:hover {
+        font-weight: ${pr => pr.theme.fontWeight};
+        color: ${pr => pr.theme.secondaryColor};
+        transform: scale(1.1);
+        transition: all 0.5s ease-in-out;
+    }
+    transition: all 0.5s ease-in-out;
    }
    h4 {
     color: ${pr => pr.theme.secondaryColor};
+    border-bottom: 2px solid ${pr => pr.theme.white};
+    padding-bottom:2.75%;
+    padding-top:0.25%;
    }
 `;
 
 const SecondSectionStyle = styled.div`
-    max-width:70%;
+    max-width:100%;
     align-items:center;
     display:flex;
     align-items:center;
     justify-content:center;
-    
 `;
 
 const ImgStyle = styled.div`
@@ -109,8 +139,9 @@ const ImgStyle = styled.div`
     justify-content:center;
     max-width:100%;
     img {
-        padding-left:10%;
-        padding-right:7.5%7.5%;
+        max-width:100%;
+        opacity:0;
+        animation:${kf} 1.75s ease-in-out forwards;
     }
 `;
 
