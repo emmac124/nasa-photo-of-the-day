@@ -9,10 +9,6 @@ const Display = () => {
 
     const [pageData, setPageData] = useState({});
 
-    // const open = () => {
-    //     setPageData(pageData.explanation)
-    // }
-    
     useEffect(() => {
       axios
         .get(`${BASE_URL}?api_key=${API_KEY}`)
@@ -40,10 +36,10 @@ const Display = () => {
                         // <Button details={open} />
                     <Button details={pageData.explanation} />
                     } */}
-                        {/* <button onClick={open}>Click Me for an Explanation!</button> */}
                     <SecondSectionStyle>
                         <ImgStyle> 
-                        <a href={pageData.hdurl}><img src={pageData.url} alt='galaxy' /></a>
+                        <img src={pageData.url} alt='galaxy' />
+                        <a href={pageData.hdurl}>Click For HD Photo</a>
                         </ImgStyle>
                     </SecondSectionStyle>
                         <h4>Explanation</h4>
@@ -136,12 +132,25 @@ const SecondSectionStyle = styled.div`
 
 const ImgStyle = styled.div`
     display:flex;
+    flex-direction:column;
     justify-content:center;
+    align-content:center;
     max-width:100%;
     img {
         max-width:100%;
         opacity:0;
         animation:${kf} 1.75s ease-in-out forwards;
+    }
+    a {
+        text-decoration:none;
+        color: ${pr => pr.theme.primaryColor};
+        padding-top:1%;
+        padding-bottom:1%;
+        margin: 0 auto;
+        margin-top: 2%;
+        border:1px solid white;
+        width:23%;
+        background-color: ${pr => pr.theme.secondaryColor};
     }
 `;
 
