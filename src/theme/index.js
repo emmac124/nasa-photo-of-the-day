@@ -8,7 +8,7 @@ export default {
    black: 'black',
    white: 'white',
    breakPoints: {
-    mobile: "(max-width: 550px)",
+    mobile: "(max-width: 500px)",
     tablet: "(max-width: 800px)",
    },
    padding: {

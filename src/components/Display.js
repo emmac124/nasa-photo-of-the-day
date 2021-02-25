@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { BASE_URL, API_KEY } from '../constants/keys';
 import styled, { keyframes } from 'styled-components';
-// import Button from './Button';
 
 const Display = () => {
 
@@ -32,16 +31,14 @@ const Display = () => {
                     <div>
                         <h2>{pageData.title}</h2>
                         <p>{pageData.date}</p>
-                        {/* {
-                        // <Button details={open} />
-                    <Button details={pageData.explanation} />
-                    } */}
+
                     <SecondSectionStyle>
                         <ImgStyle> 
                         <img src={pageData.url} alt='galaxy' />
                         <a href={pageData.hdurl}>Click For HD Photo</a>
                         </ImgStyle>
                     </SecondSectionStyle>
+
                         <h4>Explanation</h4>
                         <p>{pageData.explanation}</p>
                     </div>
