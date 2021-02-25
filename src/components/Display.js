@@ -57,7 +57,7 @@ const kf = keyframes`
   }
 `;
 
-const kframe = keyframes`
+const frame = keyframes`
     100% {
     transform: scale(1.25);
   }
@@ -76,7 +76,7 @@ const HeaderStyle = styled.h1`
     border-bottom: 2px solid ${pr => pr.theme.white};
     margin: 0 auto;
     h1 {
-        animation:${kframe} 1.75s ease-in-out forwards;
+        animation:${frame} 1.75s ease-in-out forwards;
     }
 `;
 
