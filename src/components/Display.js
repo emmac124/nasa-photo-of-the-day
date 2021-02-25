@@ -102,7 +102,7 @@ const FirstSectionStyle = styled.section`
    p {
     color: ${pr => pr.theme.white};
     max-width:100%; 
-    padding-bottom: 1.25%;
+    padding-bottom: 1.26%;
     &:hover {
         font-weight: ${pr => pr.theme.fontWeight};
         color: ${pr => pr.theme.secondaryColor};
