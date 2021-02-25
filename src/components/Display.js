@@ -67,7 +67,7 @@ const TopStyle = styled.section`
 background-color: ${pr => pr.theme.primaryColor};
 `;
 
-const HeaderStyle = styled.h1`
+const HeaderStyle = styled.section`
     max-width:50%;
     display:flex;
     justify-content:center;
